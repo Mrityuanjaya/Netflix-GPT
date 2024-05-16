@@ -5,14 +5,18 @@ import { validateData } from "../utils/validateForm";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
+  const [errorMessage, setErrorMessage] = useState(null);
+
   const email = useRef(null);
   const password = useRef(null);
   const fullName = useRef(null);
+
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
   };
-  const [errorMessage, setErrorMessage] = useState(null);
+
   const handleButtonClick = () => {
+    // Validate user
     const message = isSignInForm
       ? validateData(email.current.value, password.current.value)
       : validateData(
