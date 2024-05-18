@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
-import { NETFLIX_LOGO_URL, ROUTES } from "../utils/constants";
+import {
+  NETFLIX_LOGO_URL,
+  NETFLIX_PROFILE_URL,
+  ROUTES,
+} from "../utils/constants";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
@@ -13,7 +17,7 @@ const Header = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         const { uid, email, displayName } = user;
         dispatch(addUser({ uid: uid, email: email, displayName: displayName }));
@@ -23,6 +27,8 @@ const Header = () => {
         navigate(ROUTES.HOMEPAGE);
       }
     });
+    // Unsubscribe when the component unmounts
+    return () => unsubscribe();
   }, []);
   const handleSignOut = () => {
     signOut(auth)
@@ -44,7 +50,7 @@ const Header = () => {
           </h1>
           <img
             className="w-14 h-14"
-            src="https://th.bing.com/th/id/OIP.xNVHMQZeGGLge2GkMXbrXwAAAA?pid=ImgDet&w=182&h=182&c=7&dpr=1.3"
+            src={NETFLIX_PROFILE_URL}
             alt="user-logo"
           />
           <button

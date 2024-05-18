@@ -14,7 +14,11 @@
 - Create Sign In User
 - Configure Redux Store
 - Implemented Sign out
-- Updated Profile for Display Name using Firebase
+- BugFix: Updated Profile for Display Name using Firebase
+- BugFix: Redirect users on visiing unauthorized pages
+- Unsubscribe onAuthStateChange using cleanup function
+- Register on TMDB and create an app
+- Get Now Playing Movies API
 
 # Features
 
