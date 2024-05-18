@@ -19,6 +19,12 @@
 - Unsubscribe onAuthStateChange using cleanup function
 - Register on TMDB and create an app
 - Get Now Playing Movies API
+- Custom Hook for Now Playing Movies
+- Created a Movie Slice
+- Planning for Main container and Secondary container
+- Fetch Data for Trailer video
+- Update Store with Trailer Video Data
+- Embedded Trailer in background with Autoplay
 
 # Features
 
