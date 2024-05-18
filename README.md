@@ -3,7 +3,7 @@
 - Create React App
 - Configured TailwindCSS
 - Header
-- App Routing 
+- App Routing
 - Login Form
 - Sign Up Form
 - Form Validation
@@ -11,6 +11,10 @@
 - Configure Firebase
 - Deploying to Production
 - Create Sign Up User Account
+- Create Sign In User
+- Configure Redux Store
+- Implemented Sign out
+- Updated Profile for Display Name using Firebase
 
 # Features
 
