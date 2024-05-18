@@ -9,6 +9,8 @@ import { NETFLIX_BACKGROUNG_IMAGE_URL, ROUTES } from "../utils/constants";
 import { validateData } from "../utils/validateForm";
 import { auth } from "../utils/firebase";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { addUser } from "../utils/userSlice";
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -19,6 +21,7 @@ const Login = () => {
   const fullName = useRef(null);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const toggleSignInForm = () => {
     setIsSignInForm(!isSignInForm);
@@ -51,6 +54,14 @@ const Login = () => {
             displayName: fullName.current.value,
           })
             .then(() => {
+              const { uid, email, displayName } = auth.currentUser;
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                })
+              );
               navigate(ROUTES.BROWSEPAGE);
             })
             .catch((error) => {
