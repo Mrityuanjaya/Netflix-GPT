@@ -1,14 +1,13 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
 import Header from "./Header";
-import { NETFLIX_BACKGROUNG_IMAGE_URL, ROUTES } from "../utils/constants";
+import { NETFLIX_BACKGROUNG_IMAGE_URL } from "../utils/constants";
 import { validateData } from "../utils/validateForm";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 
@@ -20,7 +19,6 @@ const Login = () => {
   const password = useRef(null);
   const fullName = useRef(null);
 
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   const toggleSignInForm = () => {
@@ -62,7 +60,6 @@ const Login = () => {
                   displayName: displayName,
                 })
               );
-              navigate(ROUTES.BROWSEPAGE);
             })
             .catch((error) => {
               setErrorMessage(error.message);
@@ -83,7 +80,6 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          navigate(ROUTES.BROWSEPAGE);
         })
         .catch((error) => {
           const errorCode = error.code;
