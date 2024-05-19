@@ -27,6 +27,10 @@
 - Embedded Trailer in background with Autoplay
 - Added Movie List and Movie Cards
 - Added List for Popular Movies, Top Rated Movies, Trending and Upcoming Movies
+- GPT Search feature
+- GPT Search Page
+- GPT Search Bar
+- Added Multi-language Support on GPT Search Page using config Slice
 
 # Features
 
