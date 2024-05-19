@@ -25,6 +25,8 @@
 - Fetch Data for Trailer video
 - Update Store with Trailer Video Data
 - Embedded Trailer in background with Autoplay
+- Added Movie List and Movie Cards
+- Added List for Popular Movies, Top Rated Movies, Trending and Upcoming Movies
 
 # Features
 
