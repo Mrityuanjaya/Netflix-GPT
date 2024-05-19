@@ -11,6 +11,8 @@ const useTopRatedMovies = () => {
     const json = await data.json();
     dispatch(addTopRatedMovies(json?.results));
   };
-  useEffect(() => getTopRatedMovies(), []);
+  useEffect(() => {
+    getTopRatedMovies();
+  }, []);
 };
 export default useTopRatedMovies;

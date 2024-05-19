@@ -11,6 +11,8 @@ const useTrendingMovies = () => {
     const json = await data.json();
     dispatch(addTrendingMovies(json?.results));
   };
-  useEffect(() => getTrendingMovies(), []);
+  useEffect(() => {
+    getTrendingMovies();
+  }, []);
 };
 export default useTrendingMovies;
