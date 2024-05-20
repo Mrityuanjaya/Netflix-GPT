@@ -31,6 +31,7 @@
 - GPT Search Page
 - GPT Search Bar
 - Added Multi-language Support on GPT Search Page using config Slice
+- OpenAI API using openai package 
 
 # Features
 
