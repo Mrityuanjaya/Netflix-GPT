@@ -53,7 +53,7 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute flex justify-between w-screen px-8 py-2 bg-gradient-to-b from-black text-white z-10">
+    <div className="absolute flex justify-between w-full px-8 py-2 bg-gradient-to-b from-black text-white z-10">
       <img className="w-44" src={NETFLIX_LOGO_URL} alt="Netflix Logo" />
       {user && (
         <div className="flex p-2">
@@ -83,14 +83,14 @@ const Header = () => {
           />
           <button
             className={`ml-4 my-2 p-3 ${
-              showGptSearch ? "bg-red-800" : "bg-purple-800"
+              showGptSearch ? "bg-red-600" : "bg-purple-800"
             } rounded-lg`}
             onClick={handleGptSearchClick}
           >
             {showGptSearch ? "Back to Home" : "GPT Search"}
           </button>
           <button
-            className="bg-red-600 font-bol mx-4 my-2 p-3 rounded-md"
+            className="bg-red-600 font-bol ml-4 mr-2 my-2 p-3 rounded-md"
             onClick={handleSignOut}
           >
             Sign Out

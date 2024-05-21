@@ -92,7 +92,7 @@ const Login = () => {
   return (
     <>
       <Header />
-      <div className="absolute">
+      <div className="absolute max-h-screen">
         <img src={NETFLIX_BACKGROUNG_IMAGE_URL} alt="Netflix Background" />
       </div>
       <form
