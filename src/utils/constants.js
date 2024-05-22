@@ -28,3 +28,5 @@ export const SUPPORTED_LANGUAGES = [
   { identifier: "hindi", name: "Hindi" },
   { identifier: "es", name: "Spanish" },
 ];
+
+export const PROMPT_CHARACTER_LIMIT = 100;

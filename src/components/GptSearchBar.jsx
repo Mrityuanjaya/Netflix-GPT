@@ -1,11 +1,16 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addGptMovies } from "../utils/gptSlice";
-import { API_OPTIONS, TMDB_V3_BASE_URL } from "../utils/constants";
+import {
+  API_OPTIONS,
+  PROMPT_CHARACTER_LIMIT,
+  TMDB_V3_BASE_URL,
+} from "../utils/constants";
 import { lang } from "../utils/languageConstants";
 import openai, { getGptQuery } from "../utils/openai";
 
 const GptSearchBar = () => {
+  const [errorMessage, setErrorMessage] = useState(null);
   const langKey = useSelector((store) => store.config.lang);
   const searchText = useRef();
   const dispatch = useDispatch();
@@ -23,6 +28,16 @@ const GptSearchBar = () => {
 
   const handleGptSearchClick = async () => {
     // Make an API Call to get movie suggestions
+    if (searchText.current.value.length > PROMPT_CHARACTER_LIMIT) {
+      setErrorMessage("The Prompt is too long. Please shorten it.");
+      return;
+    } else if (searchText.current.value.length === 0) {
+      setErrorMessage(
+        "The Prompt is empty. Please enter what would you like to watch today."
+      );
+      return;
+    }
+    setErrorMessage(null);
     const gptQuery = getGptQuery(searchText.current.value);
     const gptResults = await openai.chat.completions.create({
       messages: [{ role: "user", content: gptQuery }],
@@ -55,6 +70,9 @@ const GptSearchBar = () => {
         >
           {lang[langKey].search}
         </button>
+        <p className="text-red-700 m-3 col-span-12 text-lg font-bold">
+          {errorMessage}
+        </p>
       </form>
     </div>
   );
