@@ -95,10 +95,10 @@ const Login = () => {
         <Header />
       </div>
       <div className="fixed">
-        <img src={NETFLIX_BACKGROUNG_IMAGE_URL} alt="Netflix Background" />
+        <img className="h-screen w-screen object-cover" src={NETFLIX_BACKGROUNG_IMAGE_URL} alt="Netflix Background" />
       </div>
       <form
-        className="fixed p-12 bg-black w-3/12 my-36 mx-auto left-0 right-0 text-white bg-opacity-80"
+        className="fixed p-12 bg-black md:w-3/12 my-36 mx-auto left-0 right-0 text-white bg-opacity-80"
         onSubmit={(e) => e.preventDefault()}
       >
         <div className="flex flex-col">

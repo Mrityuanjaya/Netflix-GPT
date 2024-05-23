@@ -60,13 +60,10 @@ const Header = () => {
         alt="Netflix Logo"
       />
       {user && (
-        <div className="flex md:p-2">
-          <h1 className="md:text-xl font-semibold my-2 md:mx-5">
-            {lang[langKey].welcome + ", " + user.displayName}
-          </h1>
+        <div className="flex justify-around md:p-2">
           {showGptSearch && (
             <select
-              className="md:my-2 mx-2 md:px-4 bg-black bg-opacity-30"
+              className="text-sm md:text-lg md:my-2 mx-2 md:px-4 bg-black bg-opacity-30"
               onChange={handleLanguageChange}
             >
               {SUPPORTED_LANGUAGES.map((lang) => (
@@ -94,7 +91,7 @@ const Header = () => {
             {showGptSearch ? "Home" : "GPT Search"}
           </button>
           <button
-            className="bg-red-600 font-bol mx-2 md:my-2 p-3 rounded-md"
+            className="bg-red-600 font-bol mx-2 my-2 p-3 rounded-md"
             onClick={handleSignOut}
           >
             Sign Out

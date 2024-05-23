@@ -31,7 +31,14 @@
 - GPT Search Page
 - GPT Search Bar
 - Added Multi-language Support on GPT Search Page using config Slice
-- OpenAI API using openai package 
+- OpenAI API using openai package
+- GPT Search API call
+- Fetched GPT Movie Suggestions from TMDB
+- GPT Slice
+- Reused MovieList Component to make movie suggestions container
+- Memoization
+- Added .env file
+- Made the website responsive
 
 # Features
 
