@@ -6,7 +6,7 @@ const GptMovieSuggestions = () => {
   const { movieResults, movieNames } = useSelector((store) => store.gpt);
   if (!movieNames) return;
   return (
-    <div className="p-4 m-4 bg-black opacity-90 text-white">
+    <div className="md:p-4 m-4 bg-black opacity-90 text-white">
       <div>
         {movieNames.map((movieName, index) => (
           <MovieList
