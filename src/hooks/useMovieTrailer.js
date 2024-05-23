@@ -5,7 +5,6 @@ import { API_OPTIONS, TMDB_V3_BASE_URL } from "../utils/constants";
 
 const useMovieTrailer = (movieId) => {
   const dispatch = useDispatch();
-  const trailerVideo = useSelector((store) => store.movies.trailerVideo);
   const getMovieVideos = async (movieId) => {
     const URL = `${TMDB_V3_BASE_URL}movie/${movieId}/videos`;
     const data = await fetch(URL, API_OPTIONS);
@@ -17,7 +16,7 @@ const useMovieTrailer = (movieId) => {
     dispatch(addTrailerVideo(trailer));
   };
   useEffect(() => {
-    !trailerVideo && getMovieVideos(movieId);
+    getMovieVideos(movieId);
   }, []);
 };
 export default useMovieTrailer;
