@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import {
   NETFLIX_LOGO_URL,
   NETFLIX_PROFILE_URL,
@@ -12,7 +12,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 import { toggleGptSearchView } from "../utils/gptSlice";
 import { changeLanguage } from "../utils/configSlice";
-import { lang } from "../utils/languageConstants";
 
 const Header = () => {
   const dispatch = useDispatch();

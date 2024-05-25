@@ -1,4 +1,3 @@
-import React from "react";
 import GptSearchBar from "./GptSearchBar";
 import GptMovieSuggestions from "./GptMovieSuggestions";
 import { NETFLIX_BACKGROUNG_IMAGE_URL } from "../utils/constants";

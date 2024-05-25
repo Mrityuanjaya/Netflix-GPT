@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addTrailerVideo } from "../utils/moviesSlice";
 import { API_OPTIONS, TMDB_V3_BASE_URL } from "../utils/constants";
 

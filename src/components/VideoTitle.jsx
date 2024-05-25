@@ -1,5 +1,3 @@
-import React from "react";
-
 const VideoTitle = ({ title, overview }) => {
   return (
     <div className="absolute w-full aspect-video text-white pt-[20%] px-12 md:px-24 bg-gradient-to-r from-black">
