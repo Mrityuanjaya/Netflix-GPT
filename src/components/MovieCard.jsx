@@ -1,9 +1,9 @@
 import { IMG_CDN_URL } from "../utils/constants";
 
-const MovieCard = ({ title, posterPath }) => {
+const MovieCard = ({ title, posterPath, setShowIndex }) => {
   if (!posterPath) return null;
   return (
-    <div className="w-36 md:w-48 pr-4">
+    <div className="w-36 md:w-48 mr-4 cursor-pointer" onClick={setShowIndex}>
       <img src={IMG_CDN_URL + posterPath} alt={title + " Poster"} />
     </div>
   );
