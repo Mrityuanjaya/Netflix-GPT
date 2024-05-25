@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { API_OPTIONS, TMDB_V3_BASE_URL } from "../utils/constants";
 
 const MoviePlayer = ({ movieId }) => {
-  console.log(movieId);
   const [youtubeVideoKey, setYoutubeVideoKey] = useState(null);
   const fetchMovieVideo = async () => {
     const URL = `${TMDB_V3_BASE_URL}movie/${movieId}/videos`;
